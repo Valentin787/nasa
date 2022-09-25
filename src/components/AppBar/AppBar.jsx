@@ -1,10 +1,10 @@
-import React, { Suspense } from "react";
-import PropTypes from "prop-types";
+import { Suspense } from "react";
+// import PropTypes from "prop-types";
 import s from "./AppBar.module.css";
 import Navigation from "../Navigation";
 import UserMenu from "../UserMenu/UserMenu";
 
-const AppBar = (props) => {
+const AppBar = () => {
   return (
     <header>
       <nav className={s.container}>

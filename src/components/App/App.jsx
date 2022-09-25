@@ -1,10 +1,15 @@
-import { useEffect, useState, lazy, Suspense } from "react";
+import {
+  // useEffect,
+  // useState,
+  lazy,
+  Suspense
+} from "react";
 // import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from "react-router-dom";
 
 import AppBar from "../AppBar/AppBar";
-import PublicRoute from "../UserMenu/PublicRoute";
-import PrivateRoute from "../UserMenu/PrivateRoute";
+// import PublicRoute from "../UserMenu/PublicRoute";
+// import PrivateRoute from "../UserMenu/PrivateRoute";
 import s from "./App.module.css";
 
 const HomePageLazy = lazy(() => import("../../pages/HomePage"));

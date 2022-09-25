@@ -6,7 +6,7 @@ import AboutOneRocket from "../common/AboutOneRocket";
 import { allDragonsState } from "../../redux/spaceX/selectors";
 import { getAllDragons } from "../../redux/spaceX/operation";
 
-import s from "./List.module.css";
+// import s from "./List.module.css";
 import "../common/Appear/AppearStyle.css";
 import Appear from "../common/Appear";
 import Banner from "./Banner";

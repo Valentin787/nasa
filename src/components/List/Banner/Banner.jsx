@@ -1,6 +1,6 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-import CancelIcon from "@mui/icons-material/Cancel";
+// import CancelIcon from "@mui/icons-material/Cancel";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import PropTypes from "prop-types";
 import s from "../List.module.css";
@@ -8,7 +8,7 @@ import "../../common/Appear/AppearStyle.css";
 import Appear from "../../common/Appear";
 
 const Banner = ({ openList, onOpenList }) => {
-  const [showTitle, setShowTitle] = useState(!openList);
+  // const [showTitle, setShowTitle] = useState(!openList);
 
   return (
     <>

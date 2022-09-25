@@ -1,10 +1,10 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import NavItem from "./NavItem/NavItem";
 import BallotRoundedIcon from "@mui/icons-material/BallotRounded";
 import OtherHousesRoundedIcon from "@mui/icons-material/OtherHousesRounded";
 import s from "./Navigation.module.css";
 
-const Navigation = (props) => {
+const Navigation = () => {
   return (
     <nav className={s.container}>
       <NavItem

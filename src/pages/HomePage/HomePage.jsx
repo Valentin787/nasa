@@ -1,5 +1,5 @@
 import Home from "../../components/Home";
-import s from "./HomePage.module.css";
+// import s from "./HomePage.module.css";
 
 const HomePage = () => {
   return (
