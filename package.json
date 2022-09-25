@@ -1,7 +1,7 @@
 {
   "name": "nasa",
   "version": "0.1.0",
-  "homepage": "https://Valentin787.github.io/nasa",
+  "homepage": "https://Valentin787.github.io/nasa/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.4",
