@@ -1,0 +1,56 @@
+.root {
+  opacity: 0;
+  transform: translateY(-40px);
+}
+
+.root.appear-done {
+  opacity: 1;
+  transform: none;
+  transition: 0.3s ease-in-out;
+}
+/* 
+.root .exit {
+  opacity: 1;
+} */
+
+.root.exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+.bannerWrap {
+  display: flex;
+  justify-content: space-around;
+}
+.bannerWrap .enter {
+  opacity: 0;
+}
+
+.bannerWrap .enter-done {
+  opacity: 1;
+
+  transform: translateX(0);
+  transition: opacity 1s, transform 1s;
+  /* transition: 0.7s ease-in-out; */
+}
+
+.bannerWrap .exit-active {
+  opacity: 0;
+  /* transition: 0.7s ease-in-out; */
+  transform: scale(0.9);
+  transition: opacity 1s, transform 1s;
+}
+
+.listWrap .enter {
+  opacity: 0;
+}
+
+.listWrap .enter-done {
+  opacity: 1;
+
+  transition: 0.7s ease-in-out;
+}
+
+.listWrap .exit-active {
+  opacity: 0;
+  transition: 0.7s ease-in-out;
+}

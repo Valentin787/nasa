@@ -1,0 +1,67 @@
+.container {
+  max-width: 700px;
+  margin: 30px auto 0px auto;
+  font-family: "Gill Sans", sans-serif;
+}
+.containerInfo {
+  composes: container;
+  max-width: 550px;
+}
+
+.title {
+  font-size: 24px;
+  border: rgb(21, 22, 22) 2px solid;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.secondTitle {
+  margin-top: 10px;
+  font-size: 18px;
+  border: rgb(21, 22, 22) 2px solid;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.title:hover,
+.title:focus,
+.secondTitle:hover,
+.secondTitle:focus {
+  border: rgb(28, 76, 221) 2px solid;
+  color: rgb(28, 76, 221);
+}
+
+.nameWrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 12px;
+  margin-top: 16px;
+}
+
+.nameTitle {
+  margin-right: 6px;
+}
+
+.descriptionWrap {
+  padding-left: 12px;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.link {
+  color: rgb(23, 23, 23);
+  text-decoration: none;
+}
+
+.linkText {
+  padding-left: 12px;
+  margin: 0px;
+}
+
+.link:hover,
+.link:focus {
+  color: rgb(28, 76, 221);
+}

@@ -1,0 +1,64 @@
+.titleListWrapOpen {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: rgb(21, 22, 22) 2px solid;
+  padding: 0px 10px 0px 10px;
+  cursor: pointer;
+  margin-left: 30px;
+}
+.titleListWrapOpen:hover,
+.titleListWrapOpen:focus {
+  border: rgb(28, 76, 221) 2px solid;
+  color: rgb(28, 76, 221);
+}
+.titleListWrapClose {
+  composes: titleListWrapOpen;
+}
+
+.titleListWrapClose:hover,
+.titleListWrapClose:focus {
+  border: #f44336 2px solid;
+  color: #f44336;
+}
+.titleList {
+  font-family: "Gill Sans", sans-serif;
+  margin-left: 8px;
+}
+
+.list {
+  max-width: 500px;
+  list-style: none;
+  margin: 30px auto;
+}
+.listItem {
+  font-family: "Gill Sans", sans-serif;
+  cursor: pointer;
+  font-size: 26px;
+  font-weight: 700;
+}
+.listItem:hover,
+.listItem:focus {
+  color: rgb(28, 76, 221);
+}
+.itemText {
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  border-radius: 30px;
+  padding: 0px 10px;
+}
+.btnCloseWrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 60px;
+}
+
+.btnClose {
+  background-color: rgba(240, 248, 255, 0);
+  cursor: pointer;
+  border: none;
+}
