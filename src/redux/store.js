@@ -30,8 +30,8 @@ const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-  devTools: process.env.NODE_ENV !== "production",
-  // devTools: true,
+  // devTools: process.env.NODE_ENV !== "production",
+  devTools: true,
 });
 
 const persistor = persistStore(store);
