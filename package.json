@@ -55,10 +55,7 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.24.0",
     "gh-pages": "^4.0.0",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
     "prop-types": "^15.8.1"
   }
 }
