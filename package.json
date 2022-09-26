@@ -33,7 +33,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "netlify deploy -p",
     "lint:js": "eslint src/**/*.{js,jsx}"
   },
   "eslintConfig": {
@@ -56,6 +56,7 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0",
+    "netlify-cli": "^11.8.3",
     "prop-types": "^15.8.1"
   }
 }
