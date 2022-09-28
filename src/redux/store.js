@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {
   persistStore,
-  // persistReducer,
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -10,19 +10,22 @@ import {
   REGISTER,
 } from "redux-persist";
 
-// import storage from 'redux-persist/lib/storage';
+import storage from 'redux-persist/lib/storage';
 import itemsReducers from "./spaceX/reducers";
+import favoriteDragonsReducer from './favoriteDragons/slice';
+import authReducer from './auth/authSlice'; 
 
-// const persistAuthConfig = {
-//   key: 'auth',
-//   storage,
-//   whitelist: ['token']
-// }
+const persistAuthConfig = {
+  key: 'token',
+  storage,
+  whitelist: ['token','refreshToken']
+}
 
 const store = configureStore({
   reducer: {
-    // auth:persistReducer(persistAuthConfig, authReducer),
+    auth:persistReducer(persistAuthConfig,authReducer),
     base: itemsReducers,
+    dragons: favoriteDragonsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

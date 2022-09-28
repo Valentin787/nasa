@@ -1,21 +1,27 @@
 import { Suspense } from "react";
+import { useSelector } from "react-redux";
 // import PropTypes from "prop-types";
-import s from "./AppBar.module.css";
+
 import Navigation from "../Navigation";
 import UserMenu from "../UserMenu/UserMenu";
+import AuthNav from "components/AuthNav";
+import { getIsLoggedIn } from "redux/auth/authSelector";
+import s from "./AppBar.module.css";
 
 const AppBar = () => {
+  
+  const isLoggedIn = useSelector(getIsLoggedIn);
+
   return (
     <header>
       <nav className={s.container}>
         <Suspense fallback={"...Loading"}>
           <Navigation />
         </Suspense>
-
-        <UserMenu />
-        {/* {isLoggedIn ? <UserMenu /> : <Suspense fallback={<Loader />}>
+        
+        {isLoggedIn ? <UserMenu /> : <Suspense fallback={"...Loading"}>
           <AuthNav />
-        </Suspense>} */}
+        </Suspense>}
       </nav>
       <hr />
     </header>

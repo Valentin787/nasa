@@ -1,0 +1,52 @@
+.container{
+  /* background-color: rgba(240, 255, 255, 0.494); */
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.favoriteItem{
+  padding: 10px 0px;
+border-bottom: rgba(126, 131, 131, 0.884) 2px solid;
+}
+.favoriteItemList{
+  min-width: 300px;
+  padding: 0px;
+  list-style: none;
+
+}
+.favoriteItemWrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.textWrap{
+  display: flex;
+  align-items: center;
+}
+.img{
+  padding: 0 14px;
+  width:50px;
+  transition: ease-in-out 500ms;
+}
+
+.text{
+  font-family: "Gill Sans",
+  sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.btnDelete{
+  background-color: rgba(240, 248, 255, 0.003);
+  border:none;
+  transition: ease-in-out 500ms;
+  /* margin-left: 20px; */
+}
+.btnDelete:hover,
+.btnDelete:focus,
+.img:hover,
+.img:focus {
+  scale: 1.5;
+  transition: ease-in-out 500ms;
+}

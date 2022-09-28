@@ -9,6 +9,19 @@
   align-items: center;
   justify-content: flex-end;
 }
+.favoriteBtn{
+  border: none;
+  display: flex;
+  align-items: center;
+  background: #1d8aea00;
+  transition: ease-in-out 500ms;
+}
+.favoriteBtn:hover,
+.favoriteBtn:focus{
+  scale: 1.3;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
 
 .itemName {
   composes: fontFamilyText;
@@ -26,20 +39,10 @@
   color: #010101;
 }
 
-/* .itemNameDark {
-  composes: itemName;
-  color: #f2eeee;
-} */
-
 .itemName:hover,
 .itemName:focus {
-  color: #4b07e9e4;
+  color: #1d8bea;
 }
-
-/* .itemNameDark:hover,
-.itemNameDark:focus {
-  color: #8a5afae4;
-} */
 
 .span {
   position: absolute;
@@ -53,25 +56,27 @@
 
 .btnText {
   margin-right: 3px;
-
   font-size: 12px;
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 1.25px;
   text-transform: uppercase;
   text-decoration: none;
-  color: white;
+
 }
 
 .btn {
-  padding: 2px 25px 2px 10px;
+  padding: 4px 40px 4px 20px;
   margin-left: 40px;
-  background-color: rgba(106, 20, 182, 0.673);
+  margin-right: 20px;
+  background-color: #1d8bea;;
   border-radius: 10px;
+  border: none;
+
 }
 
 .btn:hover,
 .btn:focus {
-  background-color: #4b07e9e4;
+  background-color: #093ec5e4;
   color: white;
 }

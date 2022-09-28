@@ -1,70 +1,71 @@
 import {
-  // useEffect,
   // useState,
   lazy,
-  Suspense
+  Suspense,
+  useEffect
 } from "react";
+import { useDispatch } from "react-redux";
 // import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from "react-router-dom";
+import { getUser } from "redux/auth/authOperations";
 
 import AppBar from "../AppBar/AppBar";
-// import PublicRoute from "../UserMenu/PublicRoute";
-// import PrivateRoute from "../UserMenu/PrivateRoute";
+import PublicRoute from "../UserMenu/PublicRoute";
+import PrivateRoute from "../UserMenu/PrivateRoute";
 import s from "./App.module.css";
+import Sidebar from "components/Sidebar";
+import Footer from "components/Footer";
+
 
 const HomePageLazy = lazy(() => import("../../pages/HomePage"));
 const ListPageLazy = lazy(() => import("../../pages/ListPage"));
+const RegisterPageLazy = lazy(() => import("../../pages/auth/RegisterPage"));
+const SingInPageLazy = lazy(() => import("../../pages/auth/SingInPage"));
 
-const App = (props) => {
+
+
+const App = () => {
   // getItems().then(data => console.log(data))
   // console.log(getItems().then(data => data));
+  const dispatch = useDispatch();
+  const height = window.innerHeight;
+
+  useEffect(() => {
+  
+    dispatch(getUser())
+  }, [dispatch])
+  
   return (
-    <div className={s.container}>
+    <div
+      style ={{minHeight:height}}
+      className={s.container}>
       <AppBar />
-      <div className={s.themeWrap}>
-        {/* <Suspense fallback={"...Loading"}>
-            </Suspense> */}
-
+       {/* <TemporaryDrawer />  */}
+      {/* <Sidebar/> */}
+      <div className={s.content}>
+        
         <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <Suspense fallback={"...Loading"}>
-                <HomePageLazy />
-              </Suspense>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/list"
-            element={
-              <Suspense fallback={"...Loading"}>
-                <ListPageLazy />
-              </Suspense>
-            }
-          ></Route>
+         
           {/* //////////////////////// */}
-          {/* <Route element={
-              <PublicRoute />}> */}
+          <Route element={<PublicRoute />}> 
 
-          {/* <Route
+          <Route
                 exact
                 path="/register"
                 element={
-                  <Suspense fallback={<Loader />}>
-                    <RegisterLazy />
+                  <Suspense fallback={"...Loading"}>
+                    <RegisterPageLazy />
                   </Suspense>}
-              /> */}
+              />
 
-          {/* <Route
+          <Route
                 exact
                 path="/sing_in"
                 element={
-                  <Suspense fallback={<Loader />}>
+                  <Suspense fallback={"...Loading"}>
                     <SingInPageLazy />
                   </Suspense>}
-            /> */}
+            /> 
           {/* <Route
                 path="*"
                 element={
@@ -73,22 +74,31 @@ const App = (props) => {
                   </Suspense>
                 }
               />*/}
-          {/* </Route>  */}
+           </Route>  
 
           {/* //////////////////////// */}
-          {/* <Route element={<PrivateRoute />}>
+          <Route element={<PrivateRoute />}>
+              <Route
+                // exact
+                path="/homepage"
+                element={
+                  <Suspense fallback={"...Loading"}>
+                    <HomePageLazy />
+                  </Suspense>
+                }
+              />
               <Route
                 path="/list"
                 element={
                   <Suspense fallback={"...Loading"}>
                     <ListPageLazy />
-                  </Suspense>}
-              />
-
-
-            </Route> */}
+                  </Suspense>
+                }
+            />
+            </Route>
         </Routes>
       </div>
+      <Footer/>
     </div>
   );
 };

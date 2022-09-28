@@ -34,6 +34,10 @@
   color: #010101;
 }
 
+.itemName:hover,
+.itemName:focus{
+  color: #1d8bea;
+}
 /* .itemNameDark {
   composes: itemName;
   color: #f9f3f3;
@@ -45,8 +49,8 @@
   margin-left: 4px;
 }
 
-.NavItemActive {
-  color: #4b07e9e4;
+.navItemActive {
+  color: #1d8bea;
 }
 
 /* .NavItemActiveDark {

@@ -1,3 +1,14 @@
-/* .container{
-  background-image: url('../../images/space.jpg');
-} */
+.container{
+  background-image: url('../../images/backgroundImg.jpeg');
+  /* background-color:yellow; */
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  /* min-height: 100%; */
+
+}
+
+
+.content {
+  flex: 1 0 auto;
+}

@@ -9,7 +9,7 @@ const NavItem = ({ link, name, icon }) => {
         <NavLink
           to={link}
           className={s.itemName}
-          activeclassname={s.NavItemActive}
+          activeclassname={s.navItemActive}
         >
           {name}
           <span className={s.span}>{icon}</span>

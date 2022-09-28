@@ -1,20 +1,15 @@
-// import { useSelector } from 'react-redux'
-import {
-  // Navigate,
-  Outlet
-} from "react-router-dom";
-// import { authSelectors } from '../../redux/auth'
+import { useSelector } from "react-redux";
+import { Navigate, Outlet } from "react-router-dom";
+import { getIsLoggedIn } from "redux/auth/authSelector";
 
 const PrivateRoute = () => {
-  // const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-  // console.log(`isLoggedIn ->>`, isLoggedIn)
 
   ////Space_X
-  // const token = useSelector(authSelectors.getToken);
+  const token = useSelector(getIsLoggedIn);
 
   return (
-    // token ? <Outlet /> : <Navigate to='/sing_in' />
-    <Outlet />
+    token ? <Outlet /> : <Navigate to='/sing_in' />
+  
   );
 };
 

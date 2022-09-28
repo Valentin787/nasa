@@ -1,5 +1,6 @@
 const BASE_URL = "https://api.spacexdata.com/v4";
 
+
 // const API_ENDPOINT = 'contacts';
 
 // const fetchData = async (path, options = {}) => {
@@ -25,17 +26,6 @@ export const getItems = (
   return fetchData(endpoint, options);
 };
 
-// const saveItem = ( item,token,options = {}) => {
-//   const finalOptions = {
-//     method: "POST",
-//     body: JSON.stringify(item),
-//     headers: {
-//       "Content-Type": "application/json; charset=UTF-8",
-//       Authorization: `Bearer ${token}`
-//     },
-//     ...options,
-//   };
-//   return fetchData(API_ENDPOINT, finalOptions);
-// };
 
-// export { getItems};
+
+

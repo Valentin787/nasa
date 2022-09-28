@@ -1,0 +1,1 @@
+export const favoriteDragonsState = (state) => state.dragons.items;

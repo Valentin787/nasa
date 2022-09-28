@@ -2,18 +2,20 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 
 import AboutOneRocket from "../common/AboutOneRocket";
-
-import { allDragonsState } from "../../redux/spaceX/selectors";
-import { getAllDragons } from "../../redux/spaceX/operation";
-
-// import s from "./List.module.css";
-import "../common/Appear/AppearStyle.css";
 import Appear from "../common/Appear";
 import Banner from "./Banner";
 import ItemList from "./ItemList/ItemList";
 import ButtonClose from "./ButtonClose/ButtonClose";
 
-const List = (props) => {
+import { allDragonsState } from "../../redux/spaceX/selectors";
+import { getAllDragons } from "../../redux/spaceX/operation";
+
+
+import s from "./List.module.css";
+import "../common/Appear/AppearStyle.css";
+
+
+const List = () => {
   const allDragons = useSelector(allDragonsState);
   const dispatch = useDispatch();
 
@@ -47,15 +49,14 @@ const List = (props) => {
       </Appear>
 
       {oneDragon && (
-        <>
+        <div className={s.oneDragonWrap}>
           <ButtonClose closeReview={closeReview} />
           <AboutOneRocket renderRocket={oneDragon} />
-        </>
+        </div>
       )}
     </>
   );
 };
 
-List.propTypes = {};
 
 export default List;
