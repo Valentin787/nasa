@@ -1,40 +1,43 @@
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
+import Sidebar from '../Sidebar';
+import FavoriteList from "components/FavoriteList";
+import Modal from "components/common/Modal";
+
 import { signOut } from "redux/auth/authSlice";
-import { getUserName } from "redux/auth/authSelector";
+import { getLocalId, getUserName } from "redux/auth/authSelector";
+import { getDragons } from "redux/favoriteDragons/operation";
 
 import AccountCircleSharpIcon from "@mui/icons-material/AccountCircleSharp";
 import LogoutIcon from "@mui/icons-material/Logout";
-import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 
 import s from "./UserMenu.module.css";
-import { useState } from "react";
-import Modal from "components/common/Modal";
-import FavoriteList from "components/FavoriteList";
-import Sidebar from '../Sidebar'
-
 
 
 const UserMenu = () => {
   const dispatch = useDispatch();
   const name = useSelector(getUserName);
+  const localId = useSelector(getLocalId);
+
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const closeModal = () => setIsOpenModal(prevState => !prevState);
+  
+  ///GET_DRAGONS
+  
+  useEffect(() => {
+    if (!localId) return;
+      
+    dispatch(getDragons(localId))
 
-  console.log(isOpenModal)
+  }, [dispatch, localId])
+
 
   return (
     <div className={s.container}>
       <button className={s.favoriteBtn}>
-      {/* <FavoriteRoundedIcon
-        sx={{
-          color: "#ea1f41",
-          fontSize: "30px"
-        }}
-        onClick={closeModal}
-        /> */}
         <Sidebar isOpenModal={isOpenModal}/>
-
       </button>
 
       {isOpenModal &&

@@ -1,10 +1,12 @@
-// import PropTypes from "prop-types";
-import NavItem from "./NavItem/NavItem";
-import BallotRoundedIcon from "@mui/icons-material/BallotRounded";
-import OtherHousesRoundedIcon from "@mui/icons-material/OtherHousesRounded";
-
 import { useSelector } from "react-redux";
+
+import NavItem from "./NavItem";
+
 import { getIsLoggedIn } from "redux/auth/authSelector";
+
+import BallotRoundedIcon from "@mui/icons-material/BallotRounded";
+import RocketLaunchRoundedIcon from '@mui/icons-material/RocketLaunchRounded';
+
 import s from "./Navigation.module.css";
 
 const Navigation = () => {
@@ -14,10 +16,10 @@ const Navigation = () => {
     <nav className={s.container}>
     {isLoggedIn && <>
      <NavItem
-        key={"HomePage"}
-        name={"HomePage"}
-        icon={<OtherHousesRoundedIcon />}
-        link={"/homepage"}
+        key={"OneRocket"}
+        name={"One_Rocket"}
+        icon={<RocketLaunchRoundedIcon />}
+        link={"/one_rocket"}
       />
       <NavItem
         key={"List"}
@@ -30,7 +32,5 @@ const Navigation = () => {
     </nav>
   );
 };
-
-Navigation.propTypes = {};
 
 export default Navigation;

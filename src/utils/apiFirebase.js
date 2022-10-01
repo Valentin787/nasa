@@ -7,7 +7,7 @@ const fetchData = async (path, options = {}) => {
 };
 
 
-export const getData = (endpoint, options) => fetchData(endpoint, options);
+export const getData = (endpoint, options) => fetchData(endpoint);
 export const saveItem = (endpoint, item, options = {}) => {
 
   const finalOptions = {

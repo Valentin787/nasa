@@ -1,5 +1,38 @@
+.base{
+  display: flex;
+  align-items: center;
+}
 .footer{
+  composes:base;
   flex: 0 0 auto;
-  background-color: bisque;
+  background-color: rgb(9 114 235 / 75%);
   min-height: 50px;
+  padding: 30px;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 16px 16px 0px 0px;
+}
+.iconWrap{
+  composes: base;
+}
+.textWrap{
+  margin-left: 10px;
+}
+.link{
+  composes: base;
+  margin: 10px 6px;
+  text-decoration: none;
+  color: white;
+}
+.link:hover,
+.link:focus{
+  color: rgb(53, 53, 55);
+}
+
+.textBottom{
+  padding: 10px 0px 0px 0px;
+  margin: 0;
+  color: white;
+  font-family: "Gill Sans",
+  sans-serif;
 }

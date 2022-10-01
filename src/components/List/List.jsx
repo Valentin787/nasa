@@ -13,6 +13,7 @@ import { getAllDragons } from "../../redux/spaceX/operation";
 
 import s from "./List.module.css";
 import "../common/Appear/AppearStyle.css";
+import { getDragons } from "redux/favoriteDragons/operation";
 
 
 const List = () => {
@@ -31,6 +32,7 @@ const List = () => {
   const closeReview = () => {
     if (oneDragon) setOneDragon(null);
   };
+
 
   return (
     <>

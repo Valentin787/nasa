@@ -1,4 +1,4 @@
-import NavItem from 'components/Navigation/NavItem/NavItem'
+import NavItem from 'components/Navigation/NavItem'
 import LoginIcon from '@mui/icons-material/Login';
 import GroupAddSharpIcon from '@mui/icons-material/GroupAddSharp';
 import s from './AuthNav.module.css'

@@ -22,7 +22,6 @@ const favoriteDragonsSlice = createSlice({
       state.error = null;
     })
       .addCase(getDragons.fulfilled, (state, { payload }) => {
-        console.log(payload)
       state.items = payload;
       state.loading = false;
     })

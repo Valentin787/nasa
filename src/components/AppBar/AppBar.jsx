@@ -1,12 +1,15 @@
 import { Suspense } from "react";
 import { useSelector } from "react-redux";
-// import PropTypes from "prop-types";
 
 import Navigation from "../Navigation";
-import UserMenu from "../UserMenu/UserMenu";
+import UserMenu from "../UserMenu";
 import AuthNav from "components/AuthNav";
+import Loader from "components/common/Loader";
+
 import { getIsLoggedIn } from "redux/auth/authSelector";
+
 import s from "./AppBar.module.css";
+
 
 const AppBar = () => {
   
@@ -15,11 +18,11 @@ const AppBar = () => {
   return (
     <header>
       <nav className={s.container}>
-        <Suspense fallback={"...Loading"}>
+        <Suspense fallback={<Loader/>}>
           <Navigation />
         </Suspense>
         
-        {isLoggedIn ? <UserMenu /> : <Suspense fallback={"...Loading"}>
+        {isLoggedIn ? <UserMenu /> : <Suspense fallback={<Loader/>}>
           <AuthNav />
         </Suspense>}
       </nav>
@@ -28,6 +31,5 @@ const AppBar = () => {
   );
 };
 
-AppBar.propTypes = {};
 
 export default AppBar;

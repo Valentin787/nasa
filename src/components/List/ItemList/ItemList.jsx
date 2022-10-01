@@ -4,6 +4,7 @@ import { addDragon, getDragons } from "redux/favoriteDragons/operation";
 import { CSSTransition } from "react-transition-group";
 import PropTypes from "prop-types";
 import LocalHospitalRoundedIcon from '@mui/icons-material/LocalHospitalRounded';
+import Tooltip from '@mui/material/Tooltip';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import s from "../List.module.css";
@@ -69,13 +70,16 @@ const ItemList = ({ openList, allDragons, setOneDragon }) => {
                   </p>
                 <button
                   onClick={() => onAddDragon(item)}                
-                  className={s.addBtn}>
-                  <LocalHospitalRoundedIcon     
-                    sx={{                     
-                      color:"#4CAF50",    
-                      fontSize:"40px"       
-                    }}                    
-                  />                 
+                    className={s.addBtn}>
+                    <Tooltip title="Add">
+                      <LocalHospitalRoundedIcon 
+                        sx={{ 
+                          color: "#4CAF50",    
+                          fontSize: "40px"                    
+                        }}                    
+                      />    
+                    </Tooltip>
+             
                   </button>
                   </div>
                <hr />

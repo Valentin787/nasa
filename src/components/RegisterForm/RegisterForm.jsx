@@ -1,3 +1,11 @@
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import Loader from 'components/common/Loader';
+
+import { register } from '../../redux/auth/authOperations';
+import { getError, getLoading, getUserName } from 'redux/auth/authSelector';
+
 import 'antd/dist/antd.css';
 import {
   SettingFilled,
@@ -5,13 +13,11 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 import { Button, Form, Input } from 'antd';
-import s from './RegisterForm.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
-import { register } from '../../redux/auth/authOperations';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { getError, getLoading, getUserName } from 'redux/auth/authSelector';
+
+import s from './RegisterForm.module.css';
 
 
 const RegisterForm = () => {
@@ -48,10 +54,6 @@ const RegisterForm = () => {
     };
 
     dispatch(register(credentials));
-    if (name) {
-      console.log(name)
-    }
-    
  
     reset()
   };
@@ -72,99 +74,105 @@ const RegisterForm = () => {
   //  const messagePassword = checkLang === "en" ? "Please input your Password!" : "Не забувайте ввести ваш Пароль :)";
   
   return (
-    <div
-      className={s.loginForm}>
-     <Form
-      name="basic"
-        
-      labelCol={{
-        span: 8,
-      }}
-      wrapperCol={{
-        span: 16,
-      }}
-      initialValues={{
-        remember: true,
-      }}
+  <>
+      {loading ?
+        <Loader /> :
+        <div
+          className={s.loginForm}>
+        <Form
+          name="basic"
+            
+          labelCol={{
+            span: 8,
+          }}
+          wrapperCol={{
+            span: 16,
+          }}
+          initialValues={{
+            remember: true,
+          }}
 
-      onFinish={onFinish}
-      autoComplete="off"
-    >
-        <Form.Item
-      
-        label="User_Name"
-        name="displayName"
-        onChange={e => setDisplayName(e.target.value)}
-        rules={[
-          {
-            required: true,
-            message: "Please input your username!",
-          },
-        ]}
-      >
-        <Input 
-        className={s.containerInput} 
-        placeholder="Please enter your name  ..."
-        prefix={<UserOutlined />} />
-      </Form.Item>
-
-      <Form.Item
-        name="email"
-        label="E-mail"
-        onChange={e => setEmail(e.target.value)}
-        rules={[
-          {
-            type: 'email',
-            message: "The input is not valid E-mail!",
-          },
-          {
-            required: true,
-            message: "Please input your E-mail!",
-          },
-        ]}
-      >
-        <Input
-        className={s.containerInput} 
-        placeholder="Please enter your e-mail with -> @  :)"
-        prefix={<SettingFilled />}/> 
-      </Form.Item>
-
-      <Form.Item
-        label="Password"
-        name="password"
-        onChange={e => setPassword(e.target.value)}
-        rules={[
-          {
-            required: true,
-            message: "Please input your Password!",
-          },
-        ]}
-      >
-        <Input.Password  
-        className={s.containerInput} 
-        placeholder="Please enter your password  ..."
-        prefix={<LockOutlined />}
-        
-        />
-      </Form.Item>
-      
-      <Form.Item
-        wrapperCol={{
-          offset: 8,
-          span: 16,
-        }}
+          onFinish={onFinish}
+          autoComplete="off"
         >
-          <Button
-          type="primary"
-          htmlType="submit"
-          disabled ={isBtnDisabled}>
-          Register
-        </Button >
+            <Form.Item
+          
+            label="User_Name"
+            name="displayName"
+            onChange={e => setDisplayName(e.target.value)}
+            rules={[
+              {
+                required: true,
+                message: "Please input your username!",
+              },
+            ]}
+          >
+            <Input 
+            className={s.containerInput} 
+            placeholder="Please enter your name  ..."
+            prefix={<UserOutlined />} />
+          </Form.Item>
 
-      </Form.Item>
-    </Form>
-      <ToastContainer theme={"colored"}/>
-    </div>
+          <Form.Item
+            name="email"
+            label="E-mail"
+            onChange={e => setEmail(e.target.value)}
+            rules={[
+              {
+                type: 'email',
+                message: "The input is not valid E-mail!",
+              },
+              {
+                required: true,
+                message: "Please input your E-mail!",
+              },
+            ]}
+          >
+            <Input
+            className={s.containerInput} 
+            placeholder="Please enter your e-mail with -> @  :)"
+            prefix={<SettingFilled />}/> 
+          </Form.Item>
+
+          <Form.Item
+            label="Password"
+            name="password"
+            onChange={e => setPassword(e.target.value)}
+            rules={[
+              {
+                required: true,
+                message: "Please input your Password!",
+              },
+            ]}
+          >
+            <Input.Password  
+            className={s.containerInput} 
+            placeholder="Please enter your password  ..."
+            prefix={<LockOutlined />}
+            
+            />
+          </Form.Item>
+          
+          <Form.Item
+            wrapperCol={{
+              offset: 8,
+              span: 16,
+            }}
+            >
+              <Button
+              type="primary"
+              htmlType="submit"
+              disabled ={isBtnDisabled}>
+              Register
+            </Button >
+
+          </Form.Item>
+        </Form>
+          <ToastContainer theme={"colored"}/>
+        </div>
+}
+      </>
+
 
   );
 
