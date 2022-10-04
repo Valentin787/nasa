@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addDragon, getDragons } from "redux/favoriteDragons/operation";
+import { addDragon } from "redux/favoriteDragons/operation";
+import { favoriteDragonsState } from "redux/favoriteDragons/selectors";
 import { CSSTransition } from "react-transition-group";
 import PropTypes from "prop-types";
 import LocalHospitalRoundedIcon from '@mui/icons-material/LocalHospitalRounded';
 import Tooltip from '@mui/material/Tooltip';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import s from "../List.module.css";
 import "../../common/Appear/AppearStyle.css";
-import { favoriteDragonsState } from "redux/favoriteDragons/selectors";
+
 
 
 
