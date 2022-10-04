@@ -47,7 +47,7 @@ const App = () => {
 
           <Route
                 exact
-                path="/register"
+                path="/"
                 element={
                   <Suspense fallback={<Loader/>}>
                     <RegisterPageLazy />
